@@ -29,3 +29,23 @@ vendor.
 ● PUT /api/purchase_orders/{po_id}/: Update a purchase order.
 
 ● DELETE /api/purchase_orders/{po_id}/: Delete a purchase order.
+
+#API Endpoints:
+
+● GET /api/vendors/{vendor_id}/performance: Retrieve a vendor's performance
+metrics.
+
+#API Endpoint Implementation :
+
+--> Vendor Performance Endpoint (GET /api/vendors/{vendor_id}/performance):
+
+● Retrieves the calculated performance metrics for a specific vendor.Should return data including on_time_delivery_rate, quality_rating_avg,average_response_time, and fulfillment_rate.
+
+● Update Acknowledgment Endpoint:
+
+● While not explicitly detailed in the previous sections, consider an endpoint like,
+
+--> POST /api/purchase_orders/{po_id}/acknowledge for vendors to acknowledge POs.
+
+● This endpoint will update acknowledgment_date and trigger the recalculation
+of average_response_time.
