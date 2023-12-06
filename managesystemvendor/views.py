@@ -85,11 +85,9 @@ class AcknowledgePurchaseOrderView(UpdateAPIView):
     queryset = PurchaseOrder.objects.all()
     serializer_class = PurchaseOrderSerializer
 
-    def update(self, request, *args, **kwargs):
-        partial = kwargs.pop('partial', False)
+    def post(self, request, *args, **kwargs):
+        # Your logic to acknowledge the purchase order
         instance = self.get_object()
-        serializer = self.get_serializer(instance, data=request.data, partial=partial)
-        serializer.is_valid(raise_exception=True)
 
         # Your logic to update acknowledgment_date
         instance.acknowledgment_date = timezone.now()
